@@ -11,4 +11,3 @@ AIfactory와 국과수에서 진행하는 AI deepfake detection 경진대회. �
   - 눈의 깜빡임 빈도가 너무 일정하거나 너무 많이 혹은 적게 깜빡일 때
   - 피부가 너무 매끈함
   - 잔머리와 배경이 흐릿하게 구분됨
-# deepfake-detection
