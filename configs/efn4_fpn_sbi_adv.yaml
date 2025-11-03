@@ -1,5 +1,5 @@
 TASK: EFN_hm100_EFPN_NoBasedCLS_Focal_C3_256Cst100_8FXRayv2_SAM(Adam)_ADV_Era1_OutSigmoid_5e5_lblsm035
-PRECISION: float64
+PRECISION: float32
 METRICS_BASE: binary
 SEED: 317
 DATA_RELOAD: True

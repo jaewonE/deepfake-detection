@@ -92,7 +92,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--video-frame-step",
         type=int,
-        default=1,
+        default=10,
         help=(
             "Decode one frame out of every N when processing videos. "
             "Keeping the default of 1 mirrors the evaluation pipeline's "
@@ -161,7 +161,7 @@ def prepare_model(
 
     cfg = load_config(cfg_path)
     _validate_inference_fields(cfg)
-    model = build_model(cfg.MODEL, MODELS).to(torch.float64)
+    model = build_model(cfg.MODEL, MODELS).to(torch.float32)
     model = load_pretrained(model, weight_path)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -180,7 +180,7 @@ def _prepare_tensor(
     """Normalize a preprocessed RGB image and move it onto the target device."""
 
     tensor = transforms(image_rgb.astype(np.float32) / 255.0)
-    tensor = tensor.unsqueeze(0).to(device=device, dtype=torch.float64)
+    tensor = tensor.unsqueeze(0).to(device=device, dtype=torch.float32)
     return tensor
 
 
